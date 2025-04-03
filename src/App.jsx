@@ -6,6 +6,11 @@ import ContactHomeWork from "./ContactsItem.json";
 
 function App() {
   const [ContactItem, ContactItems] = useState(ContactHomeWork);
+  // const mapTest = ContactItem.map()
+  // console.log(JSON.stringify(ContactItem))
+  const testMap = ContactItem.map((item,id)=>(
+    console.log(item.id)
+  ))
 
   return (
     <>
