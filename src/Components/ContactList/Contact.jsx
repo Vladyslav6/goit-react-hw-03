@@ -1,10 +1,14 @@
+import clsx from "clsx";
+import css from "./contact.module.css";
 const Contact = ({ DataItem: { name, number } }) => {
   return (
     <>
-      <div>
-        <p>{name}</p>
-        <p>{number}</p>
-        <button>Delete</button>
+      <div className={clsx(css.container)}>
+        <div>
+          <p>{name}</p>
+          <p>{number}</p>
+        </div>
+        <button className={clsx(css.deleteButton)}>Delete</button>
       </div>
     </>
   );
