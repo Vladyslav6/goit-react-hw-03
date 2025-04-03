@@ -8,9 +8,7 @@ function App() {
   const [ContactItem, ContactItems] = useState(ContactHomeWork);
   // const mapTest = ContactItem.map()
   // console.log(JSON.stringify(ContactItem))
-  const testMap = ContactItem.map((item,id)=>(
-    console.log(item.id)
-  ))
+  // const testMap = ContactItem.map((item, id) => console.log(item.id));
 
   return (
     <>
@@ -18,7 +16,7 @@ function App() {
         <h1>Phonebook</h1>
         <ContactFrom />
         <SearchBox />
-        <ContactList />
+        <ContactList StateContactItem={ContactItem} />
       </div>
     </>
   );
