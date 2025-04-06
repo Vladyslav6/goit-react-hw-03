@@ -1,11 +1,18 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ContactFrom from "./Components/ContactForm/ContactForm";
 import ContactList from "./Components/ContactList/ContactList";
 import SearchBox from "./Components/SearchBox/SearchBox";
 import ContactHomeWork from "./ContactsItem.json";
 
 function App() {
-  const [ContactItem, ContactItems] = useState(ContactHomeWork);
+  const [ContactItem, ContactItems] = useState(() => {
+    const ObjectSave = window.localStorage.getItem("setSaveObject");
+    if (ObjectSave !== null) {
+      return JSON.parse(ObjectSave);
+    }
+    return ContactHomeWork;
+  });
+
   const [FilterItem, SetFilter] = useState("");
 
   const FilterContact = ContactItem.filter((item) =>
@@ -21,7 +28,11 @@ function App() {
       return prevContact.filter((item) => item.id !== onDeleteId);
     });
   };
-
+  useEffect(() => {
+    window.localStorage.setItem("setSaveObject", JSON.stringify(ContactItem), [
+      ContactItem,
+    ]);
+  });
   return (
     <>
       <div>

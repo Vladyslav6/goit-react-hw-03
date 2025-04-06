@@ -37,30 +37,22 @@ const ContactFrom = ({ addToContact }) => {
     <>
       <Formik
         onSubmit={onSubmit}
-        // handleSubmit={handleSubmit}
         initialValues={initialsValue}
         validationSchema={AddErrorShemaYup}
       >
         <Form>
           <div className={css.formWrapper}>
-            <label>
-              <span>Name</span>
-              <Field name="name" placeholder="enter name"></Field>
-              <ErrorMessage name="name" className={css.error} component="div" />
-            </label>
-            <label>
-              <span>Number</span>
-              <Field
-                name="number"
-                type="tell"
-                placeholder="enter number phone"
-              ></Field>
-              <ErrorMessage
-                name="number"
-                className={css.error}
-                component="div"
-              />
-            </label>
+            <label> Name</label>
+            <Field name="name" placeholder="enter name"></Field>
+            <ErrorMessage name="name" className={css.error} component="div" />
+
+            <label>Number</label>
+            <Field
+              name="number"
+              type="tell"
+              placeholder="enter number phone"
+            ></Field>
+            <ErrorMessage name="number" className={css.error} component="div" />
 
             <button type="submit" className={css.buttonSubmit}>
               Add contact
@@ -71,7 +63,5 @@ const ContactFrom = ({ addToContact }) => {
     </>
   );
 };
-//
-//
-//
+
 export default ContactFrom;

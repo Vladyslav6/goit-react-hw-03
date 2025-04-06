@@ -1,9 +1,9 @@
 import Contact from "./contact";
-
+import css from "./ContactList.module.css";
 const ContactList = ({ StateContactItem, onDeleteToContact }) => {
   return (
     <>
-      <ul>
+      <ul className={css.listItem}>
         {StateContactItem.map((item) => (
           <li key={item.id}>
             <Contact DataItem={item} onDeleteToContact={onDeleteToContact} />

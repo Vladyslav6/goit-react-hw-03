@@ -7,7 +7,6 @@ const Contact = ({ DataItem: { name, number, id }, onDeleteToContact }) => {
         <div>
           <p>{name}</p>
           <p>{number}</p>
-          <p>{id}</p>
         </div>
         <button
           className={clsx(css.deleteButton)}
