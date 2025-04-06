@@ -16,9 +16,11 @@ function App() {
       return [...prevContact, newContact];
     });
   };
-  const DeleteContact =(onDelete)=>{
-    console.log("hi")
-  }
+  const DeleteContact = (onDeleteId) => {
+    ContactItems((prevContact) => {
+      return prevContact.filter((item) => item.id !== onDeleteId);
+    });
+  };
 
   return (
     <>
@@ -26,7 +28,10 @@ function App() {
         <h1>Phonebook</h1>
         <ContactFrom addToContact={AddContacts} />
         <SearchBox value={FilterItem} OnChangeFilter={SetFilter} />
-        <ContactList StateContactItem={FilterContact} />
+        <ContactList
+          StateContactItem={FilterContact}
+          onDeleteToContact={DeleteContact}
+        />
       </div>
     </>
   );

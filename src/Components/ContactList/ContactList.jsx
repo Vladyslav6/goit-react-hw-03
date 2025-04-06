@@ -1,14 +1,12 @@
 import Contact from "./contact";
 
-const ContactList = ({ StateContactItem }) => {
-  // const testMap = StateContactItem.map((item, id) => console.log(item));
-
+const ContactList = ({ StateContactItem, onDeleteToContact }) => {
   return (
     <>
       <ul>
         {StateContactItem.map((item) => (
           <li key={item.id}>
-            <Contact DataItem={item} />
+            <Contact DataItem={item} onDeleteToContact={onDeleteToContact} />
           </li>
         ))}
       </ul>

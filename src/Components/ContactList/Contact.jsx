@@ -1,6 +1,6 @@
- import clsx from "clsx";
+import clsx from "clsx";
 import css from "./contact.module.css";
-const Contact = ({ DataItem: { name, number, id } }) => {
+const Contact = ({ DataItem: { name, number, id }, onDeleteToContact }) => {
   return (
     <>
       <div className={clsx(css.container)}>
@@ -9,7 +9,12 @@ const Contact = ({ DataItem: { name, number, id } }) => {
           <p>{number}</p>
           <p>{id}</p>
         </div>
-        <button className={clsx(css.deleteButton)}>Delete</button>
+        <button
+          className={clsx(css.deleteButton)}
+          onClick={() => onDeleteToContact(id)}
+        >
+          Delete
+        </button>
       </div>
     </>
   );
