@@ -6,7 +6,7 @@ const ContactList = ({ StateContactItem }) => {
   return (
     <>
       <ul>
-        {StateContactItem.map((item, id) => (
+        {StateContactItem.map((item) => (
           <li key={item.id}>
             <Contact DataItem={item} />
           </li>

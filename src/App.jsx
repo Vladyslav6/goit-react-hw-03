@@ -16,6 +16,9 @@ function App() {
       return [...prevContact, newContact];
     });
   };
+  const DeleteContact =(onDelete)=>{
+    console.log("hi")
+  }
 
   return (
     <>
