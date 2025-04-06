@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import css from "./contact.module.css";
+import css from "./Contact.module.css";
 const Contact = ({ DataItem: { name, number, id }, onDeleteToContact }) => {
   return (
     <>

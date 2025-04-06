@@ -1,4 +1,4 @@
-import Contact from "./contact";
+import Contact from "./Contact";
 import css from "./ContactList.module.css";
 const ContactList = ({ StateContactItem, onDeleteToContact }) => {
   return (
