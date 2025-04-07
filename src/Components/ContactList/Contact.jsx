@@ -1,4 +1,4 @@
-import css from "../ContactList/contact.module.css";
+import css from "./contact.module.css";
 const Contact = ({ DataItem: { name, number, id }, onDeleteToContact }) => {
   return (
     <>
