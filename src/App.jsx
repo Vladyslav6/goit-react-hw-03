@@ -5,7 +5,7 @@ import SearchBox from "./components/SearchBox/SearchBox";
 import ContactHomeWork from "./ContactsItem.json";
 
 function App() {
-  const [ContactItem, ContactItems] = useState(() => {
+  const [Contacts, SetContacts] = useState(() => {
     const ObjectSave = window.localStorage.getItem("setSaveObject");
     if (ObjectSave !== null) {
       return JSON.parse(ObjectSave);
@@ -15,24 +15,23 @@ function App() {
 
   const [FilterItem, SetFilter] = useState("");
 
-  const FilterContact = ContactItem.filter((item) =>
+  const FilterContact = Contacts.filter((item) =>
     item.name.toLowerCase().includes(FilterItem.toLowerCase())
   );
   const AddContacts = (newContact) => {
-    ContactItems((prevContact) => {
+    SetContacts((prevContact) => {
       return [...prevContact, newContact];
     });
   };
   const DeleteContact = (onDeleteId) => {
-    ContactItems((prevContact) => {
+    SetContacts((prevContact) => {
       return prevContact.filter((item) => item.id !== onDeleteId);
     });
   };
   useEffect(() => {
-    window.localStorage.setItem("setSaveObject", JSON.stringify(ContactItem), [
-      ContactItem,
-    ]);
-  });
+    window.localStorage.setItem("setSaveObject", JSON.stringify(Contacts));
+  }, [Contacts]);
+
   return (
     <>
       <div>
